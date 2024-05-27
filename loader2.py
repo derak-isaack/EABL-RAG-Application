@@ -13,18 +13,20 @@ if user_api_key:
     os.environ['OPENAI_API_KEY'] = user_api_key
     
     # Load and split the predefined PDF file
-    loader = PyPDFLoader("2023-EABL-Annual-Report.pdf")
+    file_path = "2023-EABL-Annual-Report.pdf"
+    loader = PyPDFLoader(file_path)
     pages = loader.load_and_split()
+    
 
     # Create FAISS index
-    faiss_index = FAISS.from_documents(loader, OpenAIEmbeddings())
+    db = FAISS.from_documents(pages, OpenAIEmbeddings())
 
     # Input field for user query
     query = st.text_input("Ask a question about the EABL annual report:", key="query")
 
     if query:
         # Perform similarity search
-        docs = faiss_index.similarity_search(query, k=2)
+        docs = db.similarity_search(query, k=2)
 
         # Display search results
         st.write("Search Results:")
