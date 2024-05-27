@@ -3,11 +3,11 @@ from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
 import os
 import streamlit as st
-from dotenv import load_dotenv
 
-load_dotenv()
-default_api_key = os.getenv("OPENAI_API_KEY")
-user_api_key = st.text_input("Enter your OpenAI API Key:", type="password", value=default_api_key)
+
+# load_dotenv()
+# default_api_key = os.getenv("OPENAI_API_KEY")
+user_api_key = st.text_input("Enter your OpenAI API Key:", type="password")
 
 st.set_page_config(layout="wide", page_title="EABL RAG Application", page_icon=":rocket:")
 
