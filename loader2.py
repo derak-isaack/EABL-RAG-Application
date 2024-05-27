@@ -17,7 +17,7 @@ if user_api_key:
     pages = loader.load_and_split()
 
     # Create FAISS index
-    faiss_index = FAISS.from_documents(pages, OpenAIEmbeddings())
+    faiss_index = FAISS.from_documents(loader, OpenAIEmbeddings())
 
     # Input field for user query
     query = st.text_input("Ask a question about the EABL annual report:", key="query")
