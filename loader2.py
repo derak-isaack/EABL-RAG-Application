@@ -7,6 +7,7 @@ import streamlit as st
 st.set_page_config(layout="wide", page_title="EABL RAG Application", page_icon=":rocket:")
 
 st.header("EABL RAG Application")
+st.write("This is a demo application for the EABL RAG application.")
 # Input field for user's OpenAI API key
 user_api_key = st.text_input("Enter your OpenAI API Key:", type="password")
 
