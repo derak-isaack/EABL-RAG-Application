@@ -17,5 +17,8 @@ The user has to use their own API KEYS which can be found [here](https://platfor
 
 The [Streamlit](https://eabl-rag-application-lubbmb9wvwgos3jegn4xwe.streamlit.app/) application has a simple UI and only requires an `OPEN AI KEY` as the input. The data can be found in the `repo` for further understanding before running the queries. 
 
+Below is the deploymnet screenshot 
+![Deployment](<Screenshot (962).png>)
+
 To run the model locally, run the command `pip install requirements.txt` to install the required dependencies. 
 
